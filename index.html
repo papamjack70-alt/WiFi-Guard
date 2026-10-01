@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>WiFiGuard – narzędzie do ponownego łączenia z siecią Wi-Fi w Windows</title>
+<meta name="description" content="WiFiGuard to aplikacja dla Windows 10 i 11, która w tle sprawdza dostępność internetu i próbuje ponownie połączyć z wybraną siecią Wi-Fi.">
+<style>
+:root{--bg:#f6f8fb;--card:#fff;--text:#16202e;--muted:#5a6676;--accent:#0b6bcb;--accent-text:#fff;--border:#dde3ec;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f141b;--card:#18202b;--text:#e8edf4;--muted:#9aa6b6;--accent:#4aa3ff;--accent-text:#06121f;--border:#2a3441}}
+:root[data-theme="dark"]{--bg:#0f141b;--card:#18202b;--text:#e8edf4;--muted:#9aa6b6;--accent:#4aa3ff;--accent-text:#06121f;--border:#2a3441}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+a{color:var(--accent)}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+header{border-bottom:1px solid var(--border);background:var(--card)}
+nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0;flex-wrap:wrap}
+.logo{font-weight:700;font-size:1.15rem;text-decoration:none;color:var(--text)}
+nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0;flex-wrap:wrap}
+nav a{text-decoration:none;color:var(--muted);font-size:.95rem}
+nav a:hover{color:var(--accent)}
+.hero{padding:64px 0 48px;text-align:center}
+.hero h1{font-size:clamp(2rem,5vw,3rem);line-height:1.15;margin:0 0 16px}
+.hero p{max-width:620px;margin:0 auto 28px;color:var(--muted);font-size:1.1rem}
+.btn{display:inline-block;background:var(--accent);color:var(--accent-text);padding:13px 26px;border-radius:10px;font-weight:600;text-decoration:none}
+.btn.alt{background:transparent;color:var(--accent);border:1px solid var(--accent);margin-left:8px}
+section{padding:40px 0}
+h2{font-size:1.6rem;margin:0 0 20px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px}
+.card h3{margin:0 0 8px;font-size:1.05rem}
+.card p{margin:0;color:var(--muted);font-size:.95rem}
+ol{padding-left:22px}
+li{margin-bottom:8px}
+.note{background:var(--card);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:10px;padding:14px 18px;color:var(--muted)}
+.legal{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:24px}
+.legal h3{margin:22px 0 6px;font-size:1.05rem}
+.legal h3:first-of-type{margin-top:0}
+.legal p,.legal li{color:var(--muted);font-size:.97rem}
+footer{border-top:1px solid var(--border);padding:24px 0;text-align:center;color:var(--muted);font-size:.9rem;margin-top:24px}
+</style>
+</head>
+<body>
+<header><div class="wrap"><nav>
+<a class="logo" href="#top">📶 WiFiGuard</a>
+<ul><li><a href="#funkcje">Opis działania</a></li><li><a href="#jak">Jak działa</a></li><li><a href="#pobierz">Pobierz</a></li><li><a href="#prywatnosc">Prywatność</a></li><li><a href="#zastrzezenia">Zastrzeżenia</a></li><li><a href="#wsparcie">Wsparcie</a></li></ul>
+</nav></div></header>
+
+<main id="top">
+<div class="wrap">
+<div class="hero">
+<h1>WiFiGuard – kontrola połączenia Wi-Fi w tle</h1>
+<p>Aplikacja dla Windows 10 i 11. Działa w tle, w regularnych odstępach sprawdza, czy internet jest dostępny, a po wykryciu problemu próbuje ponownie połączyć z wybraną siecią Wi-Fi. Rezultat zależy od sprzętu, sieci i ustawień systemu.</p>
+<a class="btn" href="#pobierz">Pobierz</a><a class="btn alt" href="#jak">Zobacz jak działa</a>
+</div>
+
+<section id="funkcje">
+<h2>Opis działania</h2>
+<div class="grid">
+<div class="card"><h3>Ponowne łączenie</h3><p>Po wykryciu braku internetu lub rozłączonej karty Wi-Fi aplikacja wydaje systemowi Windows polecenie połączenia z wybraną siecią. Wynik zależy od sprzętu, sieci i ustawień Windows.</p></div>
+<div class="card"><h3>Sprawdzanie w tle</h3><p>Co ustawiony interwał (domyślnie 15 sekund) aplikacja sprawdza dostępność internetu oraz stan karty Wi-Fi.</p></div>
+<div class="card"><h3>Ikona w zasobniku</h3><p>Pokazuje status, pozwala otworzyć ustawienia lub dziennik zdarzeń i ręcznie wywołać łączenie. Wyświetla powiadomienie, gdy wykryje powrót internetu.</p></div>
+<div class="card"><h3>Ustawienia</h3><p>Jedno okno: nazwa sieci, hasło, częstotliwość kontroli i uruchamianie razem z Windows. Przycisk Clean czyści zapisane dane.</p></div>
+</div>
+</section>
+
+<section id="jak">
+<h2>Jak to działa</h2>
+<ol>
+<li>Uruchom WiFiGuard i wpisz nazwę sieci Wi-Fi oraz jej hasło.</li>
+<li>Kliknij <strong>Zapisz i uruchom</strong>. Okno zostanie ukryte, a aplikacja pozostanie w zasobniku systemowym.</li>
+<li>Aplikacja w ustawionych odstępach sprawdza, czy internet jest dostępny i czy karta Wi-Fi jest połączona.</li>
+<li>Po wykryciu problemu wykonuje rozłączenie i ponowne połączenie z wybraną siecią. Po kilku nieudanych próbach, jeśli ma uprawnienia administratora, restartuje kartę Wi-Fi.</li>
+<li>Próby są ponawiane, a po wykryciu powrotu internetu aplikacja wraca do zwykłego sprawdzania.</li>
+</ol>
+<p class="note"><strong>Ograniczenia:</strong> aplikacja nie usuwa przyczyn rozłączeń po stronie routera, dostawcy internetu ani sprzętu i nie zapewnia ciągłości połączenia. Nie gwarantujemy, że ponowne łączenie się powiedzie. Restart karty Wi-Fi wymaga uprawnień administratora.</p>
+</section>
+
+<section id="clean">
+<h2>Przycisk Clean – czyszczenie ustawień</h2>
+<div class="card">
+<p>Przycisk <strong>Clean</strong> w oknie ustawień czyści zapisane dane sieci. Po jego kliknięciu aplikacja wyświetla pytanie z trzema opcjami:</p>
+<ul style="margin:12px 0 0;padding-left:22px">
+<li><strong>Tak</strong> – czyści pola nazwy sieci i hasła oraz ustawienia aplikacji, a także usuwa zapisany profil tej sieci z Windows (działa jak funkcja „Zapomnij sieć”, hasło znika też z systemu). Jeśli komputer jest w tym momencie połączony z tą siecią, zostanie z niej rozłączony.</li>
+<li><strong>Nie</strong> – czyści tylko pola i ustawienia aplikacji. Profil sieci w Windows pozostaje bez zmian.</li>
+<li><strong>Anuluj</strong> – nic nie zmienia.</li>
+</ul>
+<p style="margin-top:12px">Po opcji „Tak” i „Nie” monitorowanie zostaje zatrzymane. Aby je wznowić, wpisz ponownie nazwę sieci i hasło, a następnie kliknij <strong>Zapisz i uruchom</strong>.</p>
+</div>
+</section>
+
+<section id="pobierz">
+<h2>Pobierz</h2>
+<div class="card">
+<p><strong>Wymagania:</strong> Windows 10 lub 11, karta Wi-Fi, zapisana sieć Wi-Fi.</p>
+<p style="margin-top:14px"><a class="btn" href="#">Pobierz WiFiGuard (Windows)</a></p>
+<p class="note" style="margin-top:12px">Aplikacja powstała jako współprodukt człowieka i sztucznej inteligencji (AI). Zobacz <a href="#zastrzezenia">zastrzeżenia i ograniczenie odpowiedzialności</a>.</p>
+<p style="margin-top:12px">Aplikację można zainstalować bez uprawnień administratora. Program jest dostępny także w Microsoft Store: <a href="#">[LINK DO MICROSOFT STORE]</a>.</p>
+</div>
+</section>
+
+<section id="prywatnosc">
+<h2>Polityka prywatności</h2>
+<div class="legal">
+<p>Obowiązuje od: <strong>[DATA]</strong>. Wydawca: <strong>Sebastian Gwiazda</strong>.</p>
+<h3>Jakie dane przetwarza aplikacja</h3>
+<p>WiFiGuard przechowuje lokalnie na Twoim komputerze nazwę sieci Wi-Fi, interwał kontroli i ustawienie autostartu (plik <em>config.json</em>) oraz prosty dziennik zdarzeń (plik <em>WiFiGuard.log</em>) z godzinami rozłączeń. Hasło do sieci jest zapisywane wyłącznie w profilu Wi-Fi systemu Windows, a nie w plikach aplikacji.</p>
+<h3>Czego nie robimy</h3>
+<ul>
+<li>Nie zbieramy ani nie wysyłamy żadnych danych osobowych na serwery wydawcy.</li>
+<li>Nie stosujemy telemetrii, analityki ani reklam.</li>
+<li>Nie udostępniamy danych osobom trzecim.</li>
+</ul>
+<h3>Połączenia sieciowe</h3>
+<p>Aby sprawdzić, czy internet działa, aplikacja nawiązuje krótkie połączenie TCP (port 443) z publicznymi adresami 1.1.1.1 i 8.8.8.8. Nie jest przesyłana żadna treść ani dane użytkownika.</p>
+<h3>Usuwanie danych</h3>
+<p>Przycisk <strong>Clean</strong> w aplikacji czyści nazwę sieci i ustawienia oraz, opcjonalnie, zapisany profil sieci w Windows. Odinstalowanie aplikacji usuwa jej pliki ustawień i dziennik.</p>
+<h3>Kontakt w sprawach prywatności</h3>
+<p><a href="mailto:sgwiazda@poczta.fm">sgwiazda@poczta.fm</a></p>
+</div>
+</section>
+
+<section id="zastrzezenia">
+<h2>Zastrzeżenia i ograniczenie odpowiedzialności</h2>
+<div class="legal">
+<h3>Ostrzeżenie: współprodukt z AI</h3>
+<p>WiFiGuard został stworzony we współpracy z narzędziami sztucznej inteligencji (AI). Kod i materiały powstały jako współprodukt człowieka i AI, dlatego mimo testów aplikacja może zawierać błędy lub działać inaczej, niż oczekujesz.</p>
+<h3>Brak gwarancji</h3>
+<p>Aplikacja jest udostępniana w stanie, w jakim jest („as is"). Wydawca nie gwarantuje, że będzie działać bez przerw, bez błędów ani że przywróci połączenie w każdej sytuacji, np. przy awarii po stronie dostawcy internetu, routera lub sprzętu.</p>
+<h3>Ograniczenie odpowiedzialności</h3>
+<p>W maksymalnym zakresie dozwolonym przez prawo odpowiedzialność wydawcy wobec użytkownika z tytułu korzystania z aplikacji jest ograniczona do kwoty ceny zakupu produktu, jaką użytkownik faktycznie zapłacił.</p>
+<p>Ograniczenie to nie wyłącza ani nie ogranicza odpowiedzialności, której zgodnie z obowiązującym prawem nie można wyłączyć ani ograniczyć, w tym uprawnień przysługujących konsumentom na mocy przepisów prawa.</p>
+<h3>Kontakt</h3>
+<p><a href="mailto:sgwiazda@poczta.fm">sgwiazda@poczta.fm</a></p>
+</div>
+</section>
+
+<section id="wsparcie">
+<h2>Wsparcie</h2>
+<div class="card">
+<p>Masz pytanie lub problem? Napisz na <a href="mailto:sgwiazda@poczta.fm">sgwiazda@poczta.fm</a>. Odpowiadamy zwykle w ciągu kilku dni roboczych. Przy zgłoszeniu podaj wersję Windows oraz zawartość pliku <em>WiFiGuard.log</em> (w zasobniku: prawy klik na ikonie → Otwórz log).</p>
+</div>
+</section>
+</div>
+</main>
+
+<footer><div class="wrap">© <span id="y">2026</span> Sebastian Gwiazda. WiFiGuard. Microsoft i Windows są znakami towarowymi Microsoft Corporation.</div></footer>
+<script>try{document.getElementById("y").textContent=new Date().getFullYear()}catch(e){}</script>
+</body>
+</html>
